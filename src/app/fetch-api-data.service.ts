@@ -33,13 +33,14 @@ export class FetchApiDataService {
         `Error body is: ${error.error}`);
     }
     return throwError(
-      'Something bad happened; please try again later.'
+      `${error.error}`
     );
   }
 
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
-    return this.http.post(apiUrl + 'login', userDetails)
+    return this.http
+      .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
 
