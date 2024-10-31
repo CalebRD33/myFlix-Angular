@@ -1,1 +1,28 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span style="cursor: pointer;" routerLink="movies" class="anton-regular">myFlix</span>
+    <span class="spacer"></span>
+    <button class="toolbar-icons" mat-icon-button matTooltip="Favorites" routerLink="favorites" aria-label="link to favorites page" >
+      <mat-icon style="color: red">favorite</mat-icon>
+    </button>
+    <button class="toolbar-icons" mat-icon-button matTooltip="Profile" [routerLink]="['profile']">
+        <mat-icon aria-label="link to profile page">account_circle</mat-icon>
+    </button>
+    <button class="toolbar-icons" mat-icon-button matTooltip="Movies" [routerLink]="['movies']">
+        <mat-icon aria-label="link to home page">local_movies</mat-icon>
+    </button>
+    <button class="toolbar-icons" mat-icon-button matTooltip="Logout" [routerLink]="['']">
+        <mat-icon aria-label="link to profile page">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="favorites">Favorites</button>
+    <button mat-menu-item routerLink="profile">Profile</button>
+    <button mat-menu-item routerLink="movies">Movies</button>
+    <button mat-menu-item routerLink="">Logout</button>
+  </mat-menu>
+
 <router-outlet></router-outlet>
