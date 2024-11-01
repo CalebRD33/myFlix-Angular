@@ -21,9 +21,10 @@ export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   constructor(
-      public fetchApiData: FetchApiDataService,
-      public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-      public snackBar: MatSnackBar) { }
+    public fetchApiData: FetchApiDataService,
+    public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
+    public snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {}
 

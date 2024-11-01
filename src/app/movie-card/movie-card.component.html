@@ -1,6 +1,12 @@
 <!-- src/app/movie-card/movie-card.component.html -->
 
 <div class="container">
+    <div>
+        <p class="anton-regular">myFlix</p>
+    </div>
+
+<div class="movie-card-container">
+    
     <mat-card *ngFor="let movie of movies; let i=index;" class="movie-card">
         <mat-card-header class="card-header">
             <mat-card-title>{{movie.Title}}</mat-card-title>
@@ -11,19 +17,33 @@
             <button
                 mat-button
                 color="primary"
+                (click)="openGenreDialog(movie)"
             >Genre</button>
 
             <button
                 mat-button
                 color="primary"
+                (click)="openDirectorDialog(movie)"
             >Director</button>
 
             <button
                 mat-button
                 color="primary"
+                (click)="openSynopsisDialog(movie)"
             >Synopsis</button>
-
-            <mat-icon>favorite_border</mat-icon>
+            
+            <button
+                mat-icon-button
+                class="fav-icon-btn"
+            >
+                <mat-icon
+                    class="fav-icon"
+                    fontIcon="{{ movie.isFavorite ? 'favorite' : 'favorite_border'}}"
+                    id="{{movie._id}}-favorite-icon"
+                    (click)="addDeleteFavorite(movie)"
+                >favorite_border</mat-icon>
+            </button>
         </mat-card-actions>
     </mat-card>
+</div>
 </div>
