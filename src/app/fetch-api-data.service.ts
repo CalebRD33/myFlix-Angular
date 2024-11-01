@@ -107,10 +107,8 @@ export class FetchApiDataService {
     return this.http.delete(apiUrl + 'users/' + username, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+      }
+    )}).pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   public getUserFavoriteMovies(username: String): Observable<any> {
@@ -124,7 +122,7 @@ export class FetchApiDataService {
 
   public addFavoriteMovie(username: String, movieId: String): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.post(apiUrl + 'users/' + username + '/movies/' + movieId, {headers: new HttpHeaders(
+    return this.http.post(apiUrl + 'users/' + username + '/movies/' + movieId, {}, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       }
