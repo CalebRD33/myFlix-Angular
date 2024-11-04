@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppComponent } from './app.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -69,7 +70,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [
     provideClientHydration(),

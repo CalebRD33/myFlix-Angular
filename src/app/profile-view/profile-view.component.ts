@@ -18,9 +18,15 @@ export class ProfileViewComponent {
   ) { this.user = JSON.parse(localStorage.getItem('user') || " ") }
   
   openEditUserDialog(): void {
-    this.dialog.open(EditUserFormComponent, {
+    const dialogRef = this.dialog.open(EditUserFormComponent, {
     // Assigning the dialog a width
-    width: '280px'
+    width: '280px',
+    data: { user: this.user }
+    });
+
+    dialogRef.componentInstance.userUpdated.subscribe((updatedUser: any) => {
+      // Update the user information in the parent component
+      this.user = updatedUser;
     });
   }
 

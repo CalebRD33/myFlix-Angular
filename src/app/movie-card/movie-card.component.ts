@@ -13,6 +13,8 @@ import { InfoBoxComponent } from '../info-box/info-box.component';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+  filteredMovies: any[] = [];  // Initialize as an empty array
+  searchTerm: string = '';
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -27,6 +29,7 @@ export class MovieCardComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
+      this.filteredMovies = this.movies;
       console.log(this.movies);
       let user = JSON.parse(localStorage.getItem("user") || "");
       this.movies.forEach((movie: any) => {
@@ -36,6 +39,13 @@ export class MovieCardComponent implements OnInit {
     }, err => {
       console.error(err)
     })
+  }
+
+  filterMovies(): void {
+    const searchLower = this.searchTerm.toLowerCase();
+    this.filteredMovies = this.movies.filter(movie =>
+      movie.Title.toLowerCase().includes(searchLower)
+    );
   }
 
   addDeleteFavorite(movie: any): void {

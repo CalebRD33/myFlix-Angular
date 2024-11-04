@@ -3,7 +3,7 @@
       <mat-card-title style="margin-bottom: 20px;">Edit User Info</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form>
+      <form (keydown.enter)="editUserInfo()">
         <mat-form-field>
           <input
             matInput
@@ -26,6 +26,7 @@
           <input
             matInput
             [(ngModel)]="userData.Birthday"
+            [placeholder]="user.Birthday"
             type = "date" 
             name="Birthday"
           >

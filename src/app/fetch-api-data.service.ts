@@ -30,10 +30,10 @@ export class FetchApiDataService {
     } else {
       console.error(
         `Error Status code ${error.status},` +
-        `Error body is: ${error.error}`);
+        `Error body is: ${JSON.stringify(error.error)}`);
     }
     return throwError(
-      `${error.error}`
+      `${JSON.stringify(error.error)}`
     );
   }
 

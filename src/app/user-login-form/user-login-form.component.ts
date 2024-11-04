@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Router } from '@angular/router';
 
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -24,7 +26,8 @@ export class UserLoginFormComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
-    public router: Router
+    public router: Router,
+    public authService: AuthService
   ) { }
 
   ngOnInit(): void {}
@@ -38,6 +41,7 @@ export class UserLoginFormComponent implements OnInit {
         this.snackBar.open('user logged in successfully!', 'OK', {
           duration: 2000
         });
+        this.authService.login();
       }
       this.dialogRef.close();
       console.log(response);

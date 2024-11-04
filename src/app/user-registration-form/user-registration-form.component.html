@@ -3,7 +3,7 @@
       <mat-card-title style="margin-bottom: 20px;">Sign Up!</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form>
+      <form (keydown.enter)="registerUser()">
         <mat-form-field>
           <input
             matInput

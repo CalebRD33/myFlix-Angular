@@ -1,13 +1,17 @@
 <!-- src/app/movie-card/movie-card.component.html -->
 
 <div class="container">
-    <div>
+    <div class="title">
         <p class="anton-regular">myFlix</p>
+        <mat-form-field appearance="outline" class="search-bar">
+            <mat-label>Search Movies</mat-label>
+            <input matInput [(ngModel)]="searchTerm" (input)="filterMovies()" placeholder="Type to search...">
+        </mat-form-field>
     </div>
 
 <div class="movie-card-container">
     
-    <mat-card *ngFor="let movie of movies; let i=index;" class="movie-card">
+    <mat-card *ngFor="let movie of filteredMovies; let i=index;" class="movie-card">
         <mat-card-header class="card-header">
             <mat-card-title>{{movie.Title}}</mat-card-title>
             <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
