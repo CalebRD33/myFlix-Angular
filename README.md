@@ -1,27 +1,46 @@
 # MyFlixAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Project Dependencies](#project-dependencies)
+- [API Used](#api-used)
+- [Development Server](#development-server)
+
+## Overview
+
+myFlix-Angular is a responsive app built with Angular. It allows users to create an account, browse and search movies, view detailed information about movies, genre, and director, add movies to a list of favorites, and manage profile information.
+
+## Features
+
+- **Welcome View** allows the user to either sign up or login to an existing account.
+- **Movies view** allows the user to scroll through movie cards or use the search bar to find a movie by title.
+- **Profile View** allows the user to see their account info, change their account info, or delete their account entirely.
+- **Favorites View** allows the user to see all of the movies they have added to favorites.
+
+## Live Demo
+
+[Click here for the Live Site](https://calebrd33.github.io/myFlix-Angular/)
+
+## Project Dependencies
+
+- Angular
+- Angular Router
+- Angular Material
+- Bootstrap
+- Express
+- HTML
+- CSS
+
+## API Used
+
+- [myFlix API](https://github.com/CalebRD33/myFlix)
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
