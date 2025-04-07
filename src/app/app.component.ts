@@ -24,4 +24,11 @@ export class AppComponent {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
   }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Adds smooth scrolling
+    });
+  }
 }

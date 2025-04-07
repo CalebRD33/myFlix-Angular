@@ -1,3 +1,8 @@
+.navBar {
+    position: fixed;
+    z-index: 1000;
+}
+
 .spacer {
     flex: 1 1 auto;
 }
@@ -15,4 +20,5 @@
     font-style: normal;
     font-size: 28px;
     color: rgb(91, 20, 161);
+    cursor: pointer;
   }

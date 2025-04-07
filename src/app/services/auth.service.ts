@@ -6,16 +6,24 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
 
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loggedIn = new BehaviorSubject<boolean>(this.getLoggedInStateFromStorage());
 
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  login() {
+  login(): void {
     this.loggedIn.next(true);
+    localStorage.setItem('isLoggedIn', 'true');
   }
 
-  // Method to log out
-  logout() {
+  logout(): void {
     this.loggedIn.next(false);
+    localStorage.removeItem('isLoggedIn');
+  }
+
+  getLoggedInStateFromStorage(): boolean {
+    if (typeof window !== 'undefined' && localStorage.getItem('isLoggedIn') === 'true') {
+      return true;
+    }
+    return false;
   }
 }
